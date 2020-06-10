@@ -104,3 +104,26 @@ var newMessage = message[0].toUpperCase() + message.slice(1).toLowerCase();  // 
 
 
 ```
+
+- Boolean
+```javascript
+& // ampersand
+| // pipe
+! // bang
+
+A && B
+// 当A为true, 则返回B; 当A为false, 则返回A
+
+A || B
+// 当A为true, 则返回A; 当A为false, 则返回B
+
+>= //greater than or equal to
+<= //less than or equal to
+=== // triple equal, is equal to
+== // double equal
+
+"5" === 5 // false
+"5" == 5 // true
+0 == false // true
+"false" == false // false
+```
