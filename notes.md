@@ -100,7 +100,7 @@ var message = "Hello there, how are you doing?";
 message.toUpperCase();  // "HELLO THERE, HOW ARE YOU DOING?"
 message.toLowerCase();  // "hello there, how are you doing?"
 
-var newMessage = message.slice(0,1).toUpperCase() + message.slice(1).toLowerCase();  // 让首字母大写
+var newMessage = message[0].toUpperCase() + message.slice(1).toLowerCase();  // 让首字母大写
 
 
 ```
