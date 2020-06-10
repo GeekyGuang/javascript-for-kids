@@ -24,6 +24,8 @@ drawCats(10);
 ```
 
 - three basic types of data: numbers, strings, Booleans
+> anywhere you can use a number or a string, you can also use a variable containing a number or a string.
+
 ```javascript
 var nick;
 // undefined
@@ -69,4 +71,36 @@ score -= 3;  // minus-equals
 // 14
 
 // *=, /= 
+
+
+// STRING
+"9" + 9  // "99"
+
+"skdjskjjsds".length;
+var myAwesomeString = "awesome";
+myAwesomeString.length;
+
+// [] square brackets
+// () parentheses
+// . period
+// , comma
+// ; semicolon
+
+var codeWord1 = "are";
+var codeWord2 = "tubas";
+var codeWord3 = "unsafe";
+var codeWord4 = "?!";
+codeWord1[1] + codeWord2[1] + codeWord3[1] +codeWord4[1];
+// "run!"
+
+"a string".slice(0, 3); // "a s"
+"a string".slice(4); // "ring" 
+
+var message = "Hello there, how are you doing?";
+message.toUpperCase();  // "HELLO THERE, HOW ARE YOU DOING?"
+message.toLowerCase();  // "hello there, how are you doing?"
+
+var newMessage = message.slice(0,1).toUpperCase() + message.slice(1).toLowerCase();  // 让首字母大写
+
+
 ```
