@@ -127,3 +127,12 @@ A || B
 0 == false // true
 "false" == false // false
 ```
+
+- undefined VS null
+```javascript
+// when you create a new variable,if you don’t set its value to anything using the = operator, its value will be set to undefined
+var myVariable;  // undefined
+
+// The null value is usually used when you want to deliberately say “This is empty.”
+var myNullVariable = null;
+```
