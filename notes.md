@@ -136,3 +136,35 @@ var myVariable;  // undefined
 // The null value is usually used when you want to deliberately say “This is empty.”
 var myNullVariable = null;
 ```
+
+- array
+```javascript
+var dinosaurs = [];
+dinosaurs[0] = "T-Rex";
+dinosaurs[1] = "Velociraptor";
+dinosaurs[2] = "Stegosaurus";
+dinosaurs[3] = "Triceratops";
+dinosaurs[33]="Philosoraptor"; // length: 34
+
+
+var dinosaursAndNumbers = [3, "dinosaurs", ["triceratops", "stegosaurus", 3627.5], 10];
+dinosaursAndNumbers[2][1]
+// "stegosaurus"
+
+dinosaursAndNumbers.length
+dinosaursAndNumbers[dinosaursAndNumbers.length -1]
+
+var animals = [];
+animals.push("cat");  // 开头插入
+animals.push("dog");
+animals.push("Llama"); 
+animals.unshift("Monkey");  // 末尾插入
+animals.unshift("Polar Bear");
+// ["Polar Bear", "Monkey", "cat", "dog", "Llama"]
+
+animals.pop();  // 弹出最后
+animals.shift();  // 弹出最前
+
+// concatenate
+firstArray.concat(otherArray)
+```
