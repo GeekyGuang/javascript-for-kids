@@ -166,5 +166,27 @@ animals.pop();  // 弹出最后
 animals.shift();  // 弹出最前
 
 // concatenate
-firstArray.concat(otherArray)
+firstArray.concat(otherArray);
+
+// concat可以拼接多个数组
+fisrtArry.concat(one, two ,three);
+
+// finding the index of an element
+array.indexOf(element);
+colors.indexOf("blue");
+
+// turning an array into a string
+var boringAnimals = ["Monkey", "Cat", "Fish", "Lizard"];
+boringAnimals.join(); // "Monkey,Cat,Fish,Lizard" 默认用comma
+boringAnimals.join(" "); // "Monkey Cat Fish Lizard"
+["Your", "dress", "is", "beautiful" + "!!!"].join(" "); // "Your dress is beautiful!!!"
+[3, 2, 1].join(" is bigger than ") // "3 is bigger than 2 is bigger than 1"
+
+// decision maker
+Math.random();  // (0,1)
+Math.random() * 7 // (0, 7)
+Math.floor(Math.random() * 7) // [0, 6]
+Math.ceil() // 向上取整
+Math.round()  // 四舍五入
+
 ```
