@@ -81,10 +81,12 @@ var myAwesomeString = "awesome";
 myAwesomeString.length;
 
 // [] square brackets
+// {} curly brackets
 // () parentheses
 // . period
 // , comma
 // ; semicolon
+// : colon
 
 var codeWord1 = "are";
 var codeWord2 = "tubas";
@@ -188,5 +190,80 @@ Math.random() * 7 // (0, 7)
 Math.floor(Math.random() * 7) // [0, 6]
 Math.ceil() // 向上取整
 Math.round()  // 四舍五入
+
+```
+
+- Object
+> While arrays are mostly used to represent lists of multiple things, objects are often used to represent single things with multiple characteristics, or attributes.
+```javascript
+var cat = {
+"legs": 3,
+"name": "Harmony",
+"color": "Tortoiseshell"
+};
+
+// key的引号可以省略，若有空格，必须加引号
+var cat = {
+legs: 3,
+"full name": "Harmony Philomena Snuggly-Pants Morgan",
+color: "Tortoiseshell",
+1: "hello",
+color2: "red"
+};
+
+
+// 访问有空格的key
+cat["full name"] 
+
+// 访问数字形式的key, 下面两种方式都可以
+cat[1]
+cat["1"]
+
+// .只能访问variable形式的key, ["key"]可以访问所有key
+cat["color"]
+cat.color2
+
+// 获取所有的key
+Object.keys(cat);  // (5) ["1", "legs", "full name", "color", "color2"]
+Object.keys(cat)[1];  // "legs"
+
+// JavaScript doesn’t store objects with their keys in any particular order.and as a result different browsers will print the keys in different orders.
+
+// 2种方式添加 key-value pairs
+var cat = {};
+cat["legs"] = 3;
+cat["full name"] = "Harmony Philomena Snuggly-Pants Morgan";
+cat.name = "Harmony";
+cat.color = "Tortoiseshell";
+
+
+// combine array and object
+var dinosaurs = [
+    {name: "Tyrannosaurus Rex", period: "Late Cretaceous" },
+    {name: "Stegosaurus", period: "late Jurassic" },
+    {name: "Plateosaurus", period: "Triassic" }
+    ];
+
+dinosaurs[0];
+// {name: "Tyrannosaurus Rex", period: "Late Cretaceous"}
+dinosaurs[0].name; // "Tyrannosaurus Rex"
+dinosaurs[0]["name"]; // "Tyrannosaurus Rex"
+
+var anna = { name: "Anna", age: 11, luckyNumbers: [2, 4, 8, 16] };
+var dave = { name: "Dave", age: 5, luckyNumbers: [3, 9, 40] };
+var kate = { name: "Kate", age: 9, luckyNumbers: [1, 2, 3] };
+var friends = [anna, dave, kate];
+
+friends[1]; // {name: "Dave", age: 15, luckyNumbers: Array(3)}
+friends[1]["luckyNumbers"][1];
+friends[1].luckyNumbers[1]
+
+var myCrazyObject = {
+    "name": "A ridiculous object",
+    "some array": [7, 9, {purpose: "confusion", number: 123}, 3.3],
+    "random animal": "Banana Shark"
+};
+
+myCrazyObject["some array"][2].number // 123
 
 ```
