@@ -267,3 +267,10 @@ var myCrazyObject = {
 myCrazyObject["some array"][2].number // 123
 
 ```
+
+- html
+```html
+<a href="http://xkcd.com" title="xkcd: Land of geeky comics!">Click here</a>
+```
+
+
