@@ -282,5 +282,6 @@ if (name.length > 7) {
     console.log("Hello " + name);
 }
 
+// loop
 
 ```

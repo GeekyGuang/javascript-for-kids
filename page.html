@@ -15,6 +15,35 @@
             } else if (name === "nicolas") {
                 console.log("Hello " + name);
             }
+
+            var animals = ["Cat", "Fish", "Lemur", "Komodo Dragon"];
+            for (var i = 0; i < animals.length; i++) {
+                animals[i] = "Awesome " + animals[i];
+            }
+
+            console.log(animals);
+
+
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
+            var randomString = "";
+            while(randomString.length < 4) {
+                randomString += alphabet[Math.floor(Math.random() * alphabet.length)]
+            }
+            console.log(randomString);
+
+            var input = "javascript is awesome";
+            var output = "";
+            for (var i = 0; i < input.length; i++) {
+                var item = input[i];
+                if (item === "a") item = "4";
+                else if (item === "e") item = "3";
+                else if (item === "i") item = "1";
+                else if (item === "o") item = "0";
+
+                output += item;
+            }
+
+            console.log(output);
         </script>
     </body>
 </html>
