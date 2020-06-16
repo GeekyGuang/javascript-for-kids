@@ -273,4 +273,14 @@ myCrazyObject["some array"][2].number // 123
 <a href="http://xkcd.com" title="xkcd: Land of geeky comics!">Click here</a>
 ```
 
+- control structure
+```javascript
+var name = "nicolas"
+if (name.length > 7) {
+    console.log("You've got a long name!")
+} else if (name === "nicolas") {
+    console.log("Hello " + name);
+}
 
+
+```
