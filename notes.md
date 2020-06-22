@@ -285,3 +285,21 @@ if (name.length > 7) {
 // loop
 
 ```
+
+- prompt
+> 点取消时，返回的是null，且被转换成了string类型 'null'
+```javascript
+var name = prompt("What's your name?");
+console.log("Hello " + name);
+```
+
+- confirm
+> 点确定时返回true，取消时返回false
+```javascript
+var likeCats = confirm("Do you like cats?");
+if (likeCats) {
+    console.log("You're a cool cat!");
+} else {
+    console.log("Yeah, that's fine. You're still cool!");
+}
+```
