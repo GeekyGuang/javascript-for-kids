@@ -303,3 +303,8 @@ if (likeCats) {
     console.log("Yeah, that's fine. You're still cool!");
 }
 ```
+
+- alert
+```javascript
+alert("What's up");
+```
