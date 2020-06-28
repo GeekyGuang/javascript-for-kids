@@ -308,3 +308,5 @@ if (likeCats) {
 ```javascript
 alert("What's up");
 ```
+
+- pseudocode 伪代码
