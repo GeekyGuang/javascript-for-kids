@@ -310,3 +310,21 @@ alert("What's up");
 ```
 
 - pseudocode 伪代码
+
+- function
+> 如果没有指定return，则返回 undefined
+```javascript
+var printMultipleTimes = function (howManyTimes, whatToDraw) {
+  for (var i = 0; i < howManyTimes; i++) {
+    console.log(i + " " + whatToDraw);
+  }
+};
+
+
+// return a value
+var double = function (number) {
+    return number * 2;
+};
+
+double(double(3));
+```
