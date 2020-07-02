@@ -332,8 +332,31 @@ double(double(3));
 // 用return退出函数
 var fifthLetter = function (name) {
   if (name.length < 5) {
-  return;  // 退出函数
+  return;  // 退出函数, 返回undefined
   }
   return "The fifth letter of your name is " + name[4] + ".";
 };
+
+var medalForScore = function (score) {
+  if (score < 3) {
+    return "Bronze";  
+  }
+  if (score < 7) {
+    return "Silver";
+  }
+    return "Gold";
+};
+
+
+
+// function expression
+var functionName = function(arguments) {
+    dosomething...
+}
+
+
+// function declaration
+function functionName(arguments) {
+    dosomething...
+}
 ```
