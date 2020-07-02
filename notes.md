@@ -313,6 +313,8 @@ alert("What's up");
 
 - function
 > 如果没有指定return，则返回 undefined
+> 注意function是独立的，不能因为function里的变量与全局变量名相同，就不传参数，这是不好的习惯
+
 ```javascript
 var printMultipleTimes = function (howManyTimes, whatToDraw) {
   for (var i = 0; i < howManyTimes; i++) {
@@ -352,11 +354,12 @@ var medalForScore = function (score) {
 // function expression
 var functionName = function(arguments) {
     dosomething...
-}
+};
 
 
 // function declaration
 function functionName(arguments) {
     dosomething...
-}
+}   // 注意这里没分号
+
 ```
