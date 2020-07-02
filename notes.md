@@ -327,4 +327,13 @@ var double = function (number) {
 };
 
 double(double(3));
+
+
+// 用return退出函数
+var fifthLetter = function (name) {
+  if (name.length < 5) {
+  return;  // 退出函数
+  }
+  return "The fifth letter of your name is " + name[4] + ".";
+};
 ```
