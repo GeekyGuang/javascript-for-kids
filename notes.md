@@ -373,4 +373,25 @@ headingElement.innerHTML = newHeadingText;  // 修改内容
 ```
 
 - jQuery
+> jQuery is a JavaScript library—a collection of related tools (mostly functions) that gives us, in this case, a simpler way to work with DOM elements. 
+```html
+<!-- 引入jquery library -->
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+<script>
+    var newHeadingText = prompt("Please provide a new heading:");
+    $("#main-heading").text(newHeadingText);
+    // $获取对象，.text方法修改内容
+    $("body").append("<p>this is a new paragraph.</p>");  // 添加新的paragraph
+    $("h1").fadeOut(3000);  // 消失 3000毫秒内
+    $("h1").hide(1000); // 同上
+
+
+    // chaining 链式调用，方法会逐一执行
+    $("#main-heading").text("JS is awesome").fadeOut(3000).fadeIn(3000);
+    $("h1").slideUp(1000).slideDown(1000);
+</script>
+```
+
+
+
 
