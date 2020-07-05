@@ -389,6 +389,9 @@ headingElement.innerHTML = newHeadingText;  // 修改内容
     // chaining 链式调用，方法会逐一执行
     $("#main-heading").text("JS is awesome").fadeOut(3000).fadeIn(3000);
     $("h1").slideUp(1000).slideDown(1000);
+    $("h2").fadeOut(1000).delay(3000).fadeIn(1000);  // delay
+
+    $("h1").fadeTo(2000, 0.2);  // 变淡， 2000是时间， 0.2是透明度， 0.00 - 1.00
 </script>
 ```
 
