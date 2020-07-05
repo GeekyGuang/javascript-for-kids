@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find the buried treasure!</title>
+</head>
+<body>
+    <h1 id="heading">Find the buried treasure!</h1>
+
+    <img src="images/treasuremap.png" alt="treasure map" id="map" width=400 height=400>
+    <p id="distance"></p>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        var getRandomCoordinate = function(size) {
+            return Math.floor(Math.random() * size);
+        }
+        
+        var measureDistance = function(event, target) {
+            var diffX = event.offsetX - target.x; // 注意这里用offsetX
+            var diffY = event.offsetY - target.y;
+            return Math.sqrt(diffX*diffX + diffY*diffY);
+        }
+
+        var getHint = function(distance) {
+            if (distance < 10) {
+                return "Really Really hot";
+            } else if (distance < 30) {
+                return "Really hot";
+            } else if (distance < 50) {
+                return "hot";
+            } else if (distance < 60) {
+                return "cold";
+            } else if (distance < 80) {
+                return "really cold";
+            } else {
+                return "freezing";
+            }
+        }
+
+
+        var width = 400;
+        var height = 400;
+        var clicks = 0;
+
+        var target = {
+            x: getRandomCoordinate(width),
+            y: getRandomCoordinate(height)
+        }
+
+        $("#map").click(function(event){
+            console.log(event);
+            clicks++;
+            var distance = measureDistance(event, target);
+            var message = getHint(distance);
+
+            $("#distance").text(message + " " + clicks + " "+ distance);
+            if (distance < 8) {
+            $("#distance").text("Congratulations! You win!");
+            }
+        })
+        
+
+    </script>
+</body>
+</html>

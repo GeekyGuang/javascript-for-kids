@@ -436,12 +436,14 @@ $("h1").click(clickHandler);
 
 
 // mousemove
-$("html").mousemove(function(event) {
+$("html").mousemove(function(event) {   // 如果用不到event对象的属性，可以不传event
     $("#heading").offset({
         left: event.pageX,
         top: event.pageY
     });
 });
+
+// 图片的点击事件，用event.offsetX(到图片坐上角的距离)，不能用pageX(到页面左上角)
 ```
 
 
