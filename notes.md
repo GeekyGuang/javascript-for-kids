@@ -363,3 +363,14 @@ function functionName(arguments) {
 }   // 注意这里没分号
 
 ```
+
+- DOM(document object model)
+```javascript
+var headingElement = document.getElementById("main-heading");  // 获取对象
+console.log(headingElement.innerHTML);
+var newHeadingText = prompt("Please provide a new heading:");
+headingElement.innerHTML = newHeadingText;  // 修改内容
+```
+
+- jQuery
+
