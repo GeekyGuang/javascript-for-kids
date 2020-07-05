@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        var direction = "right";
+
+        $("h1").offset({left:200, top:200})
+
+        var runSquare = function() {
+            if (direction === "right") {
+                $("h1").offset({left: 400});
+                direction = "down";
+            } else if (direction === "down") {
+                $("h1").offset({top: 400});
+                direction = "left";
+            } else if (direction === "left") {
+                $("h1").offset({left: 200});
+                direction = "up";
+            } else if (direction === "up") {
+                $("h1").offset({top: 200});
+                direction = "right";
+            }
+
+        }
+        
+        var time = 1001
+        var intervalId = setInterval(runSquare, time);
+        var clicks = 0;
+        $("h1").append(" " + clicks);
+        /*
+        $("html").click(function(event){
+            clearInterval(intervalId);
+        })
+        */
+
+        var speedUp = function() {
+            if (clicks < 10) {
+                clearInterval(intervalId);
+                time -= 100;
+                intervalId = setInterval(runSquare, time);
+                clicks++;
+                $("h1").text("Hello world! " + clicks);
+            } else {
+                clearInterval(intervalId);
+                $("h1").text("You win!");
+            }
+        }
+
+        $("h1").click(speedUp);
+    </script>
+</body>
+</html>

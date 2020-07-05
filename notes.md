@@ -313,7 +313,8 @@ alert("What's up");
 
 - function
 > 如果没有指定return，则返回 undefined
-> 注意function是独立的，不能因为function里的变量与全局变量名相同，就不传参数，这是不好的习惯
+> 注意function是独立的，不能因为function里的变量与全局变量名相同，就不传参数，这是不好的习惯， 除非你想改变全局变量
+
 
 ```javascript
 var printMultipleTimes = function (howManyTimes, whatToDraw) {
@@ -418,6 +419,29 @@ counter++;
 
 var intervalid = setInterval(printMessage, 1000);  // 每隔1秒执行一次
 clearInterval(intervalid); // 取消执行
+```
+
+- offset
+```javascript
+$("#heading").offset({left: 100 }); // 偏移
+```
+
+- event handler
+```javascript
+var clickHandler = function(event) {
+    console.log("Click! " + event.pageX + " " + event.pageY);  // event 是对象
+};
+
+$("h1").click(clickHandler);
+
+
+// mousemove
+$("html").mousemove(function(event) {
+    $("#heading").offset({
+        left: event.pageX,
+        top: event.pageY
+    });
+});
 ```
 
 
