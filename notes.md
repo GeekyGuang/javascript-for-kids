@@ -395,6 +395,31 @@ headingElement.innerHTML = newHeadingText;  // 修改内容
 </script>
 ```
 
+- setTimeout and clearTimeout
+```javascript
+var timeUp = function() {
+    alert("Time's up!");
+}
+
+setTimeout(timeUp, 3000); //延迟执行，函数名后面没有括号
+// 1 返回的是一个ID
+
+var TimeoutID = setTimeout(timeUp, 3000);
+clearTimeout(TimeoutID); //取消执行
+```
+
+- setInterval and clearInterval
+```javascript
+var counter = 1;
+var printMessage = function() {
+  console.log("You have been staring at your console for " + counter + " seconds");
+counter++;
+};
+
+var intervalid = setInterval(printMessage, 1000);  // 每隔1秒执行一次
+clearInterval(intervalid); // 取消执行
+```
+
 
 
 
