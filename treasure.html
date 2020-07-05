@@ -41,6 +41,7 @@
         var width = 400;
         var height = 400;
         var clicks = 0;
+        var maxClicks = 10;
 
         var target = {
             x: getRandomCoordinate(width),
@@ -53,10 +54,16 @@
             var distance = measureDistance(event, target);
             var message = getHint(distance);
 
-            $("#distance").text(message + " " + clicks + " "+ distance);
-            if (distance < 8) {
-            $("#distance").text("Congratulations! You win!");
+            if (clicks > maxClicks || (clicks == maxClicks && distance >= 8)){
+                $("#distance").text("Game over!")
+                return;
             }
+            if (distance < 8) {
+                $("#distance").text("Congratulations! You win!");
+                return;
+            }
+            $("#distance").text(message + ", remain " + (maxClicks - clicks) + " clicks, distance " + distance);
+            
         })
         
 
