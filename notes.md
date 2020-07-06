@@ -446,6 +446,47 @@ $("html").mousemove(function(event) {   // 如果用不到event对象的属性�
 // 图片的点击事件，用event.offsetX(到图片坐上角的距离)，不能用pageX(到页面左上角)
 ```
 
+- constructor
+```javascript
+var Car = function (x, y) {
+            this.x = y;
+            this.y = y;
+        }
+
+var tesla = new Car(10, 20);
+
+
+// 将method加在prototype上，这样所有创建的对象都能共用
+Car.prototype.draw = function () {
+            var carHtml = '<img src="images/car.png">';
+
+            this.carElement = $(carHtml);
+
+            this.carElement.css({
+                position: "absolute",
+                left: this.x,
+                top: this.y
+            });
+
+            $("body").append(this.carElement);
+        };
+
+
+tesla.draw();
+
+// 不加function()会报错
+var moveId = setInterval(function(){tesla.moveRight();}, 50);
+
+
+
+var Car = function (x, y) {
+    this.x = y;
+    this.y = y;
+
+    this.draw();  // 可以在构造函数里调用自己的method
+}
+```
+
 
 
 

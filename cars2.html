@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+        var Car = function (x, y, speed) {
+            this.x = y;
+            this.y = y;
+            this.speed = speed;
+
+            this.draw();
+        }
+        /*
+        var drawCar = function (car) {
+            var carHtml = '<img src="images/car.png">';
+
+            var carElement = $(carHtml);
+
+            carElement.css({
+                position: "absolute",
+                left: car.x,
+                top: car.y
+            });
+
+            $("body").append(carElement);
+        };
+        */
+
+        Car.prototype.draw = function () {
+            var carHtml = '<img src="images/car.png">';
+
+            this.carElement = $(carHtml);
+
+            this.carElement.css({
+                position: "absolute",
+                left: this.x,
+                top: this.y
+            });
+
+            $("body").append(this.carElement);
+        };
+
+        Car.prototype.moveRight = function () {
+            this.x += this.speed;
+            this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        Car.prototype.moveLeft = function () {
+                this.x -= this.speed;
+                this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        Car.prototype.moveUp = function () {
+                this.y -= this.speed;
+                this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        Car.prototype.moveDown = function () {
+                this.y += this.speed;
+                this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        };
+
+        var tesla = new Car(20, 20, 5);
+        var nissan = new Car(100, 200, 10);
+
+        var moveId = setInterval(function(){tesla.moveRight();}, 50);
+        var moveId = setInterval(function(){nissan.moveRight();}, 50);
+        
+    </script>
+</body>
+</html>
