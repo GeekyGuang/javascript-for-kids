@@ -513,6 +513,15 @@ ctx.stroke();  // draw lines actually, makes the lines appear on the screen.
 
 ctx.fill();  // 填充封闭的path
 
+// arc
+// arc(x, y, radius, startAngle, endAngle, anticlockwise)
+// 弧度=(Math.PI/180)*角度。
+ctx.beginPath();
+ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
+ctx.stroke();
+
+
+
 
 
 ```
