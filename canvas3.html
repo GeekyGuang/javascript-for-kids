@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, 20, 50);
+        ctx.fillStyle = "Green";
+        ctx.fillRect(20, 0, 20, 50);
+        ctx.fillStyle = "Blue";
+        ctx.fillRect(40, 0, 20, 50);
+        
+        ctx.strokeStyle = "deepPink";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(0, 60, 50, 10);
+    </script>
+</body>
+</html>
