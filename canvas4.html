@@ -12,12 +12,35 @@
         var ctx = canvas.getContext("2d");
         ctx.strokeStyle = "Turquoise";
         ctx.lineWidth = 4;
-        ctx.beginPath();  // tell the canvas that we want to start
+        // ctx.beginPath();  // tell the canvas that we want to start
         ctx.moveTo(10, 10); // move off the virtual pen to those coordinates
         ctx.lineTo(60,60); // draw a virtual line(imaging)
         ctx.moveTo(60,10);
         ctx.lineTo(10, 60);
-        ctx.stroke();  // draw lines actually, makes the lines appear on the screen.
+        // ctx.stroke();  // draw lines actually, makes the lines appear on the screen.
+        
+        ctx.strokeRect(120, 10, 20, 20);
+        ctx.moveTo(130, 30);
+        ctx.lineTo(130, 70);
+        ctx.moveTo(130, 50);
+        ctx.lineTo(110, 40);
+        ctx.moveTo(130, 50);
+        ctx.lineTo(150, 40);
+        ctx.moveTo(130, 70);
+        ctx.lineTo(105, 100);
+        ctx.moveTo(130, 70);
+        ctx.lineTo(155, 100);
+        ctx.stroke();
+        
+        ctx.fillStyle = "emerald green";
+        ctx.moveTo(160, 10);
+        ctx.lineTo(180, 10);
+        ctx.lineTo(180, 30);
+        ctx.lineTo(160, 30);
+        ctx.lineTo(160, 10);
+        ctx.fill();
+        
+
 
 
     </script>

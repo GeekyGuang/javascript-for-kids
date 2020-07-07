@@ -503,13 +503,16 @@ ctx.strokeRect(0, 60, 50, 10);
 
 // paths or lines
 ctx.strokeStyle = "Turquoise";
-ctx.lineWidth = 4;
+ctx.lineWidth = 4; // 画线时并不用考虑宽度的影响，宽度始终是由中心线平分的，加宽度就像给骨头加肉
 ctx.beginPath();  // tell the canvas that we want to start
 ctx.moveTo(10, 10); // move off the virtual pen to those coordinates
 ctx.lineTo(60,60); // draw a virtual line(imaging)
 ctx.moveTo(60,10);
 ctx.lineTo(10, 60);
 ctx.stroke();  // draw lines actually, makes the lines appear on the screen.
+
+ctx.fill();  // 填充封闭的path
+
 
 
 ```
