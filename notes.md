@@ -488,5 +488,14 @@ var Car = function (x, y) {
 ```
 
 
+- canvas
+```javascript
+var canvas = document.getElementById("canvas");  // DOM object
+        var ctx = canvas.getContext("2d");  // A draw-ing context is a JavaScript object that includes all the methods and properties for drawing on a canvas. 
+        ctx.fillStyle = "Red"; // 设置填充颜色
+        ctx.fillRect(0,0,10,10); // 在(0, 0) 画一个10 * 10长方形 (x, y, 底, 高)
+```
+
+
 
 

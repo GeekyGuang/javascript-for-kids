@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.fillRect(75, 0, 50, 50);
+        ctx.fillRect(95, 50, 10, 20);
+        ctx.fillRect(45, 70, 110, 10);
+        ctx.fillRect(70, 80, 60, 60);
+        ctx.fillRect(70, 140, 10, 50);
+        ctx.fillRect(120, 140, 10, 50);
+    </script>
+</body>
+</html>
