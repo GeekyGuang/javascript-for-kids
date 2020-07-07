@@ -6,17 +6,16 @@
 <body>
     <canvas id="canvas" width="1000" height="1000"></canvas>
 
-    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
     <script>
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
 
-        $("#canvas").mousemove(function(event){
+        canvas.onmousemove = function(event){
             console.log(event);
             ctx.beginPath();
             ctx.arc(event.offsetX, event.offsetY,3, 0, Math.PI * 2, false);
             ctx.fill();
-        })
+        }
     </script>
 </body>
 </html>

@@ -520,9 +520,16 @@ ctx.beginPath();
 ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
 ctx.stroke();
 
+// 不用jquery
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
 
-
-
+canvas.onmousemove = function(event){
+    console.log(event);
+    ctx.beginPath();
+    ctx.arc(event.offsetX, event.offsetY,3, 0, Math.PI * 2, false);
+    ctx.fill();
+}
 
 ```
 
