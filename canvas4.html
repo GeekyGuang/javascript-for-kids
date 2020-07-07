@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.strokeStyle = "Turquoise";
+        ctx.lineWidth = 4;
+        ctx.beginPath();  // tell the canvas that we want to start
+        ctx.moveTo(10, 10); // move off the virtual pen to those coordinates
+        ctx.lineTo(60,60); // draw a virtual line(imaging)
+        ctx.moveTo(60,10);
+        ctx.lineTo(10, 60);
+        ctx.stroke();  // draw lines actually, makes the lines appear on the screen.
+
+
+    </script>
+</body>
+</html>

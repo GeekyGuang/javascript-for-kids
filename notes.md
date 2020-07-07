@@ -491,18 +491,27 @@ var Car = function (x, y) {
 - canvas
 ```javascript
 var canvas = document.getElementById("canvas");  // DOM object
-        var ctx = canvas.getContext("2d");  // A draw-ing context is a JavaScript object that includes all the methods and properties for drawing on a canvas. 
-        ctx.fillStyle = "Red"; // 设置填充颜色
-        ctx.fillRect(0,0,10,10); // 在(0, 0) 画一个10 * 10长方形 (x, y, width, height)
+var ctx = canvas.getContext("2d");  // A draw-ing context is a JavaScript object that includes all the methods and properties for drawing on a canvas. 
+ctx.fillStyle = "Red"; // 设置填充颜色
+ctx.fillRect(0,0,10,10); // 在(0, 0) 画一个10 * 10长方形 (x, y, width, height)
 
 
-        // stroke outline
-        ctx.strokeStyle = "deepPink";
-        ctx.lineWidth = 4;
-        ctx.strokeRect(0, 60, 50, 10);
+// stroke outline
+ctx.strokeStyle = "deepPink";
+ctx.lineWidth = 4;
+ctx.strokeRect(0, 60, 50, 10);
 
-        // paths or lines
-        
+// paths or lines
+ctx.strokeStyle = "Turquoise";
+ctx.lineWidth = 4;
+ctx.beginPath();  // tell the canvas that we want to start
+ctx.moveTo(10, 10); // move off the virtual pen to those coordinates
+ctx.lineTo(60,60); // draw a virtual line(imaging)
+ctx.moveTo(60,10);
+ctx.lineTo(10, 60);
+ctx.stroke();  // draw lines actually, makes the lines appear on the screen.
+
+
 ```
 
 
