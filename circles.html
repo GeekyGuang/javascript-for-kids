@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circles</title>
+</head>
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        var circle = function (x, y , r, color, fillCircle) {
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2, false);
+            if (fillCircle) {
+                ctx.fillStyle = color;
+                ctx.fill();
+            } 
+            else {
+                ctx.strokeStyle = color;
+                ctx.stroke();
+            }
+              
+        }
+
+        ctx.lineWidth = 4;
+        circle(60, 50, 30, "black", false);
+        circle(50, 40, 5, "black", true);
+        circle(70, 40, 5, "black", true);
+        circle(60, 55, 5, "Orange", true);
+        circle(60, 125, 45, "Black", false);
+        circle(60, 125, 5, "Black", true);
+        circle(60, 103, 5, "Black", true);
+        circle(60, 147, 5, "Black", true);
+    </script>
+</body>
+</html>
