@@ -23,16 +23,25 @@
             }
               
         }
+        
 
         ctx.lineWidth = 4;
-        circle(60, 50, 30, "black", false);
-        circle(50, 40, 5, "black", true);
-        circle(70, 40, 5, "black", true);
-        circle(60, 55, 5, "Orange", true);
-        circle(60, 125, 45, "Black", false);
-        circle(60, 125, 5, "Black", true);
-        circle(60, 103, 5, "Black", true);
-        circle(60, 147, 5, "Black", true);
+
+        var drawSnowman = function (x, y) {
+            circle(x+60, y+50, 30, "black", false);
+            circle(x+50, y+40, 5, "black", true);
+            circle(x+70, y+40, 5, "black", true);
+            circle(x+60, y+55, 5, "Orange", true);
+            circle(x+60, y+125, 45, "Black", false);
+            circle(x+60, y+125, 5, "Black", true);
+            circle(x+60, y+103, 5, "Black", true);
+            circle(x+60, y+147, 5, "Black", true);
+        }
+
+        drawSnowman(0, 0);
+        drawSnowman(50, 0);
+        drawSnowman(100, 0);
+
     </script>
 </body>
 </html>
