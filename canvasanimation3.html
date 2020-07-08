@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Animation</title>
+</head>
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var radius = 0;
+        ctx.lineWidth = 4;
+
+        setInterval(function() {
+            ctx.clearRect(0, 0, 200, 200);
+
+            ctx.beginPath();
+            ctx.arc(100, 100, radius, 0, Math.PI * 2, false);
+            ctx.stroke();
+
+            radius++;
+            if (radius > 141) {
+                radius = 0;
+            }
+
+            if (radius > 10) {
+                ctx.beginPath();
+                ctx.arc(100, 100, radius - 10, 0, Math.PI * 2, false);
+                ctx.stroke();
+            }
+        }, 30);
+
+        
+    </script>
+</body>
+</html>

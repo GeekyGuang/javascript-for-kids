@@ -534,5 +534,19 @@ canvas.onmousemove = function(event){
 ```
 
 
+- animation
+```javascript
+setInterval(function() {
+    ctx.clearRect(0, 0, 200, 200);  // 清除区域
+    ctx.fillRect(position, 0, 20, 20);  // 超出画板区域并不会填充
+
+    position++;
+    if (position > 200) {
+        position = 0;
+    }
+}, 30);
+```
+
+
 
 
