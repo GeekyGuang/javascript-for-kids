@@ -547,6 +547,46 @@ setInterval(function() {
 }, 30);
 ```
 
+- keyboard
+> 执行顺序：onkeydown–>onkeypress–>onkeyup
+> 1. onkeydown：键盘一按下就触发的事件，键盘上任意键都会触发onkeydown()事件。
+> 2. onkeypress：键盘一按下就触发的事件，同onkeydown（除去功能键，如：Esc,Shift,Ctrl..）
+> 3. onkeyup：按键一松开就触发的事件。键盘上任意键都会触发onkeyup()事件。
+```javascript
+
+document.onkeydown = function(event) {
+    console.log(event.keyCode);
+}
 
 
+// jQuery
+$("body").keydown(function(event){
+            console.log(event.keyCode);
+        });
+```
+
+
+- in 操作符
+> 用来遍历对象的属性
+```javascript
+39 in {39: 2}
+// true
+
+
+$("body").keydown(function (event) {
+    if (event.keyCode in keyActions) {
+        direction = keyActions[event.keyCode];
+        ball.setDirection(direction);
+    } else if (event.keyCode in speeds) {
+        ball.speed = speeds[event.keyCode];
+        ball.setSpeed();
+    }
+    
+});
+```
+
+- Math.abs() 取绝对值
+```javascript
+var currentSpeed = Math.abs(this.xSpeed) + Math.abs(this.ySpeed); 
+```
 
