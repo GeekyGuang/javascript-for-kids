@@ -6,8 +6,6 @@
 <body>
     <canvas id="canvas" width="400" height="400"></canvas>
 
-    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
-
     <script>
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
@@ -155,7 +153,7 @@
 
         var direction = "right";
 
-        $("body").keydown(function (event) {
+        document.onkeydown = function (event) {
             console.log(event.keyCode);
             if (event.keyCode in keyActions) {
                 direction = keyActions[event.keyCode];
@@ -170,7 +168,7 @@
                 ball.setSize(size[event.keyCode]);
             }
          
-        });
+        };
         
         setInterval(function () {
             ctx.clearRect(0, 0, width, height);
