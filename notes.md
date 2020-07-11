@@ -598,3 +598,27 @@ ctx.textAlign = "left"; // 与坐标点的对齐，默认是left
 ctx.fillText("Hello world", 0, 0);  // 显示的文本和坐标
 ```
 
+- 用setTimeout替代setInterval
+```javascript
+// setInterval
+var intervalId = setInterval(function (){
+    dosomething...
+}, 100);
+
+clearInterval(intervalId); // 结束
+
+
+// setTimeout
+var timeoutId;
+var loop = function () {
+    dosomething;
+    if (条件) {
+        clearTimeout(timeoutId); // 结束
+    }
+
+    timeoutId = setTimeout(loop, 100);
+}
+
+loop();
+```
+

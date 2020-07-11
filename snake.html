@@ -4,7 +4,7 @@
     <title>Snake!</title>
 </head>
 <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="500" height="500"></canvas>
 
     <script>
         // Set up canvas
@@ -43,7 +43,8 @@
         
         // Clear the interval and display Game Over text
         var gameOver = function () {
-            clearInterval(intervalId);
+            // clearInterval(intervalId);
+            clearTimeout(timeoutId);
             ctx.font = "60px Courier";
             ctx.fillStyle = "Black";
             ctx.textAlign = "center";
@@ -104,7 +105,15 @@
         // Draw a square for each segment of the snake's body
         Snake.prototype.draw = function () {
             for (var i = 0; i < this.segments.length; i++) {
-                this.segments[i].drawSquare("Blue");
+                var color;
+                if (i === 0) {
+                    color = "purple";
+                } else if (i % 2 === 0) {
+                    color = "green"
+                } else {
+                    color = "yellow"
+                }
+                this.segments[i].drawSquare(color);
             }
         };
         
@@ -135,12 +144,29 @@
 
             if (newHead.equal(apple.position)) {
                 score++;
-                apple.move();
+                if (animationTime > 5) {
+                    animationTime--;
+                }
+                do {
+                    apple.move();
+                } while (checkApplePosition(apple.position, snake));
+                
             } else {
                 this.segments.pop();
             }
         };
         
+        checkApplePosition = function (position, snake) {
+            var appleInSnake = false;
+
+            for (var i = 0; i < snake.segments.length; i++) {
+                if (position.equal(snake.segments[i])) {
+                    appleInSnake = true;
+                }
+            }
+
+            return appleInSnake;
+        }
         // Check if the snake's new head has collided with the wall or itself
         Snake.prototype.checkCollision = function (head) {
             var leftCollision = (head.col === 0);
@@ -198,7 +224,7 @@
         // Create the snake and apple objects
         var snake = new Snake();
         var apple = new Apple();
-        
+        /*
         // Pass an animation function to setInterval
         var intervalId = setInterval(function () {
             ctx.clearRect(0, 0, width, height);
@@ -208,6 +234,23 @@
             apple.draw();
             drawBorder();
         }, 100)
+
+        */
+
+        var animationTime = 90;
+        var timeoutId;
+
+        var gameLoop = function () {
+            ctx.clearRect(0, 0, width, height);
+            drawScore();
+            snake.move();
+            snake.draw();
+            apple.draw();
+            drawBorder();
+            timeoutId = setTimeout(gameLoop, animationTime)
+        }
+
+        gameLoop();
 
         // Convert keycodes to directions
         var directions = {
