@@ -590,3 +590,11 @@ $("body").keydown(function (event) {
 var currentSpeed = Math.abs(this.xSpeed) + Math.abs(this.ySpeed); 
 ```
 
+- ctx.fillText()在canvas显示文字
+```javascript
+ctx.textBaseline = "top";  // 默认是bottom，开始坐标在text的左下角
+ctx.font = "20px Arial";  // 设置字体和大小
+ctx.textAlign = "left"; // 与坐标点的对齐，默认是left
+ctx.fillText("Hello world", 0, 0);  // 显示的文本和坐标
+```
+

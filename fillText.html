@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>text</title>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        ctx.textBaseline = "top";  // 默认是bottom，开始坐标在text的左下角
+        ctx.font = "20px Arial";  // 设置字体和大小
+        ctx.textAlign = "left"; // 与坐标点的对齐，默认是left
+        ctx.fillText("Hello world", 0, 0);  // 显示的文本和坐标
+    </script>
+</body>
+</html>
